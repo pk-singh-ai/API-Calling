@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("pexels-chuck-4372403.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.btn_one {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 2;
+}
+
+.btn_one label,
+.btn_two label {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#menu-toggle:focus-visible ~ .btn_one label {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+#menu-toggle:checked:focus-visible ~ .sidebar .btn_two label {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(250px, 85vw);
+    height: 100%;
+    padding: 24px 16px;
+    color: white;
+    background: rgba(0, 0, 0, 0.9);
+    border-right: 3px solid white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .btn_one {
+    visibility: hidden;
+}
+
+.sidebar-header {
+    padding: 8px 0 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_two {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+}
+
+.sidebar i {
+    width: 24px;
+    color: white;
+    font-size: 16px;
+}
+
+.sidebar ul {
+    margin-top: 16px;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 8px;
+    list-style: none;
+}
+    
